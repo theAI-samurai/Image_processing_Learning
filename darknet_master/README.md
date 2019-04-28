@@ -11,11 +11,11 @@ For questions or issues please use the [Google Group](https://groups.google.com/
 
 [plot_logfile_loss.py] : this python script plots the loss during training saved in the log file 
 
-# to save the logs of trining
-$ ./darknet detector train backup/nfpa.data cfg/yolov3.cfg weights/darknet53.conv.74 >> backup/<name>.log
+# to save the logs of training
+$ ./darknet detector train backup/nfpa.data cfg/yolov3.cfg weights/darknet53.conv.74 >> backup/name.log
 
-# to plot theduring training saved inside the log file
-$ python3 plot_logfile_loss.py backup/<name>.log
+# to plot the Loss during training saved inside the log file
+$ python3 plot_logfile_loss.py backup/name.log
 
 
 
