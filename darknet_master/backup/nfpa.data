@@ -2,4 +2,4 @@ classes= 1
 train=/home/ankit/Downloads/gitWork/Image_processing_Learning/darknet_master/backup/train.txt
 valid=/home/ankit/Downloads/gitWork/Image_processing_Learning/darknet_master/backup/test.txt
 names=/home/ankit/Downloads/gitWork/Image_processing_Learning/darknet_master/backup/nfpa.names
-backup=backup/
+backup=/home/ankit/Downloads/gitWork/Image_processing_Learning/darknet_master/backup/
