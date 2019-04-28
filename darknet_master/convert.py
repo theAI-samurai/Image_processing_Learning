@@ -29,7 +29,7 @@ outpath = "./Labels/output/"
 
 cls = "006"
 if cls not in classes:
-0    exit(0)
+    exit(0)
 cls_id = classes.index(cls)
 
 wd = getcwd()
