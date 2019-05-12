@@ -10,10 +10,14 @@ wget https://github.com/opencv/opencv/archive/${OPENCV_VERSION}.zip
 unzip ${OPENCV_VERSION}.zip
 rm ${OPENCV_VERSION}.zip
 mv opencv-${OPENCV_VERSION} OpenCV
+wget https://github.com/opencv/opencv_contrib/archive/${OPENCV_VERSION}.zip
+unzip ${OPENCV_VERSION}.zip
+rm ${OPENCV_VERSION}.zip
+mv opencv_contrib-${OPENCV_VERSION} opencv_contrib
 cd OpenCV
 mkdir build
 cd build
-cmake -DWITH_QT=OFF -DWITH_GSTREAMER=ON -DWITH_OPENGL=OFF -DFORCE_VTK=OFF -DWITH_TBB=OFF -DWITH_GDAL=OFF -DWITH_XINE=OFF -DBUILD_EXAMPLES=OFF -DENABLE_PRECOMPILED_HEADERS=OFF ..
+cmake -DOPENCV_EXTRA_MODULES_PATH=../../opencv_contrib/modules -DWITH_QT=OFF -DWITH_GSTREAMER=ON -DWITH_OPENGL=OFF -DFORCE_VTK=OFF -DWITH_TBB=OFF -DWITH_GDAL=OFF -DWITH_XINE=OFF -DBUILD_EXAMPLES=OFF -DENABLE_PRECOMPILED_HEADERS=OFF ..
 make -j4
 sudo make install
 sudo ldconfig
