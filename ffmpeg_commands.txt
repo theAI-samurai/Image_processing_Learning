@@ -1,0 +1,7 @@
+# EXTRACTING FRAMES FROM VIDEO
+
+ffmpeg -i file.mpg -r 1/1 $filename%03d.jpg
+
+ffmpeg -r 1 -i file.mp4 -r 1 "$filename%03d.png
+
+ffmpeg -i file.mp4 -vf fps=1 %03d.jpg
