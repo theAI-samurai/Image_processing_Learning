@@ -9,5 +9,5 @@ ffmpeg -i file.mp4 -vf fps=1 %03d.jpg
 
 # create a subset of video given start duration and end duration
 
-ffmpeg -i inputFile.mp4 -vcodec copy -acodec copy -ss 01:05:23 -to 01:27:33 ooutputFile.mp4
+ffmpeg -i 3.mp4 -vcodec copy -acodec copy -ss 04:19:58 -to 04:24:33 3_test2.mp4
 
