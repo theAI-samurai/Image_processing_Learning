@@ -148,7 +148,6 @@ def Color_Detection_HSV(image_frame):
     res_hsv_white = cv2.bitwise_and(test_hsv, test_hsv, mask=mask_white)     # DOUBLE Masked  HSV
     res_hsv_silver = cv2.bitwise_and(test_hsv, test_hsv, mask=mask_silver)   # DOUBLE Masked  HSV
 
-
     nz_balck_bgr = count_pixel_(cv2.split(res_hsv_black)[0])
     nz_gray_bgr = count_pixel_(cv2.split(res_hsv_gray)[0])
     nz_blue_bgr = count_pixel_(cv2.split(res_hsv_blue)[0])
@@ -225,7 +224,6 @@ def Color_Detection_RGB(image_frame):
     res_bgr_white = cv2.bitwise_and(image_frame, image_frame, mask=mask_white)  # DOUBLE Masked  HSV
     res_bgr_silver = cv2.bitwise_and(image_frame, image_frame, mask=mask_silver)  # DOUBLE Masked  HSV
 
-
     nz_balck_bgr = count_pixel_(cv2.split(res_bgr_black)[0])
     nz_gray_bgr = count_pixel_(cv2.split(res_bgr_gray)[0])
     nz_blue_bgr = count_pixel_(cv2.split(res_bgr_blue)[0])
@@ -236,35 +234,34 @@ def Color_Detection_RGB(image_frame):
     nz_silver_bgr = count_pixel_(cv2.split(res_bgr_silver)[0])
     nz_yellow_bgr = count_pixel_(cv2.split(res_bgr_yellow)[0])
 
-
     if nz_balck_bgr > nz_white_bgr and nz_balck_bgr > nz_red_bgr and nz_balck_bgr > nz_blue_bgr \
             and nz_balck_bgr > nz_yellow_bgr and nz_balck_bgr > nz_gray_bgr and nz_balck_bgr > nz_brown_bgr \
             and nz_balck_bgr > nz_orange_bgr and nz_balck_bgr > nz_silver_bgr:
-        return "BLACK"
+        return "BLACK", res_bgr_black
     elif nz_white_bgr > nz_balck_bgr and nz_white_bgr > nz_red_bgr and nz_white_bgr > nz_blue_bgr \
             and nz_white_bgr > nz_yellow_bgr and nz_white_bgr > nz_gray_bgr and nz_white_bgr > nz_brown_bgr \
             and nz_white_bgr > nz_orange_bgr and nz_white_bgr > nz_silver_bgr:
-        return "WHITE"
+        return "WHITE", res_bgr_white
     elif nz_red_bgr > nz_balck_bgr and nz_red_bgr > nz_white_bgr and nz_red_bgr > nz_blue_bgr \
             and nz_red_bgr > nz_yellow_bgr and nz_red_bgr > nz_gray_bgr and nz_red_bgr > nz_brown_bgr \
             and nz_red_bgr > nz_orange_bgr and nz_red_bgr > nz_silver_bgr:
-        return "RED"
+        return "RED", res_bgr_red
     elif nz_blue_bgr > nz_balck_bgr and nz_blue_bgr > nz_white_bgr and nz_blue_bgr > nz_red_bgr \
             and nz_blue_bgr > nz_yellow_bgr and nz_blue_bgr > nz_gray_bgr and nz_blue_bgr > nz_brown_bgr \
             and nz_blue_bgr > nz_orange_bgr and nz_blue_bgr > nz_silver_bgr:
-        return "BLUE"
+        return "BLUE", res_bgr_blue
     elif nz_yellow_bgr > nz_balck_bgr and nz_yellow_bgr > nz_white_bgr and nz_yellow_bgr > nz_blue_bgr and nz_yellow_bgr > nz_red_bgr \
             and nz_yellow_bgr > nz_gray_bgr and nz_yellow_bgr > nz_brown_bgr and nz_yellow_bgr > nz_orange_bgr and nz_yellow_bgr > nz_silver_bgr:
-        return "YELLOW"
+        return "YELLOW", res_bgr_yellow
     elif nz_gray_bgr > nz_balck_bgr and nz_gray_bgr > nz_white_bgr and nz_gray_bgr > nz_blue_bgr and nz_gray_bgr > nz_red_bgr \
             and nz_gray_bgr > nz_yellow_bgr and nz_gray_bgr > nz_brown_bgr and nz_gray_bgr > nz_orange_bgr and nz_gray_bgr > nz_silver_bgr:
-        return "GRAY"
+        return "GRAY", res_bgr_gray
     elif nz_brown_bgr > nz_balck_bgr and nz_brown_bgr > nz_white_bgr and nz_brown_bgr > nz_blue_bgr and nz_brown_bgr > nz_red_bgr \
             and nz_brown_bgr > nz_yellow_bgr and nz_brown_bgr > nz_gray_bgr and nz_brown_bgr > nz_orange_bgr and nz_brown_bgr > nz_silver_bgr:
-        return "BROWN"
+        return "BROWN", res_bgr_brown
     elif nz_orange_bgr > nz_balck_bgr and nz_orange_bgr > nz_white_bgr and nz_orange_bgr > nz_blue_bgr and nz_orange_bgr > nz_red_bgr \
             and nz_orange_bgr > nz_yellow_bgr and nz_orange_bgr > nz_gray_bgr and nz_orange_bgr > nz_brown_bgr and nz_orange_bgr > nz_silver_bgr:
-        return "ORANGE"
+        return "ORANGE", res_bgr_orange
     elif nz_silver_bgr > nz_balck_bgr and nz_silver_bgr > nz_white_bgr and nz_silver_bgr > nz_blue_bgr and nz_silver_bgr > nz_red_bgr \
             and nz_silver_bgr > nz_yellow_bgr and nz_silver_bgr > nz_gray_bgr and nz_silver_bgr > nz_brown_bgr and nz_silver_bgr > nz_orange_bgr:
-        return "SILVER"
+        return "SILVER", res_bgr_silver
